@@ -1,0 +1,14 @@
+<%= simple_form_for(@band_profile) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-group">
+    	<%= f.input :name, input_html: { class: 'form-control' }, autofocus: true %>
+    </div>
+    <div class="form-group">
+    	<%= f.input :info, input_html: { class: 'form-control' } %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

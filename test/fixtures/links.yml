@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  url: MyString
+  band_profile_id: 
+  member_id: 
+
+two:
+  title: MyString
+  url: MyString
+  band_profile_id: 
+  member_id: 

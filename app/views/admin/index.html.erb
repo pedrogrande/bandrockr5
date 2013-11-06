@@ -1,0 +1,39 @@
+<h1>My Band Profile page</h1>
+
+<% if !current_user.band_profile %>
+	<div class="alert alert-warning">
+        <h4>You don't have a profile yet! Create your band profile now!</h4>
+        <br>
+        <%= link_to "Create your band profile", new_band_profile_path, class: 'btn btn-success' %>
+	</div>
+<% else %>
+	<div class="well">
+		<h2><%= @band_profile.name %></h2>
+		<p class="lead"><%= @band_profile.info %></p>
+	</div>
+
+	<h3><%= @band_profile.name %>'<%= ends_in_s?(@band_profile.name) %> Gigs</h3>
+	<% if @gigs %>
+		<% @gigs.each do |gig| %>
+			<div class="well">
+				<strong><%= gig.title %></strong>
+				<br>
+				<p>Location: <%= gig.location %></p>
+				<p>Date: <%= gig.date.to_date %></p>
+				<p>Start time: <%= gig.start_time.to_time %></p>
+				<%= link_to "Edit", edit_gig_path(gig) %>
+			</div>
+		<% end %>
+	<% end %>
+	
+	<%= link_to "Add new gig", new_gig_path, class: 'btn btn-success' %>
+	<hr>
+
+	<h3><%= @band_profile.name %>'<% if @band_profile.name.last != 's' %>s<% end %> Photos</h3>
+	<% if @photos %>
+		<%= link_to "Photo gallery", photos_path(band_profile: @band_profile), class: 'btn btn-info' %>
+	<% end %>
+	<%= link_to "Add photos", new_photo_path, class: 'btn btn-success' %>
+	<hr>
+
+<% end %>

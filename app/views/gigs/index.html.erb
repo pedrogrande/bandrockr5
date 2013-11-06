@@ -1,0 +1,41 @@
+<h1>Listing gigs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Date</th>
+      <th>Start time</th>
+      <th>Finish time</th>
+      <th>Location</th>
+      <th>Street address</th>
+      <th>Suburb</th>
+      <th>Tickets url</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @gigs.each do |gig| %>
+      <tr>
+        <td><%= gig.title %></td>
+        <td><%= gig.date %></td>
+        <td><%= gig.start_time %></td>
+        <td><%= gig.finish_time %></td>
+        <td><%= gig.location %></td>
+        <td><%= gig.street_address %></td>
+        <td><%= gig.suburb %></td>
+        <td><%= gig.tickets_url %></td>
+        <td><%= link_to 'Show', gig %></td>
+        <td><%= link_to 'Edit', edit_gig_path(gig) %></td>
+        <td><%= link_to 'Destroy', gig, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Gig', new_gig_path %>

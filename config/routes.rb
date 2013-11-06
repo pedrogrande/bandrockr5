@@ -1,4 +1,19 @@
 Bandrockr5::Application.routes.draw do
+  get "admin" => "admin#index"
+  resources :gigs
+
+  resources :photos
+
+  resources :tracks
+
+  resources :albums
+
+  resources :links
+
+  resources :members
+
+  resources :band_profiles
+
   root :to => "home#index"
   resources :users, :only => [:index, :show, :edit, :update ]
   get '/auth/:provider/callback' => 'sessions#create'

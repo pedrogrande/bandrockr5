@@ -1,0 +1,28 @@
+<h1><%= @band_profile.name %>'s photos</h1>
+
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <% @photos.each_with_index do |photo, index| %>
+        <li data-target="#carousel-example-generic" data-slide-to="<%= index %>" class="<%= 'active' if index == 0 %>"></li>
+
+    <% end %>
+  </ol>
+
+  <div class="carousel-inner">
+    <% @photos.each_with_index do |photo, index| %>
+      <div class="item <%= 'active' if index == 0 %>">
+        <%= image_tag photo.image %>
+        <div class="carousel-caption">
+          <%= photo.caption %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+</div>

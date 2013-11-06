@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @album.title %>
+</p>
+
+<p>
+  <strong>Release date:</strong>
+  <%= @album.release_date %>
+</p>
+
+<p>
+  <strong>Info:</strong>
+  <%= @album.info %>
+</p>
+
+<p>
+  <strong>Buy link:</strong>
+  <%= @album.buy_link %>
+</p>
+
+<%= link_to 'Edit', edit_album_path(@album) %> |
+<%= link_to 'Back', albums_path %>

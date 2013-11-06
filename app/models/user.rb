@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   rolify
-  attr_accessible :provider, :uid, :name, :email
+  has_one :band_profile
+  
   validates_presence_of :name
 
   def self.create_with_omniauth(auth)

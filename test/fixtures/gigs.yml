@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  date: 2013-11-04
+  start_time: 2013-11-04 18:49:50
+  finish_time: 2013-11-04 18:49:50
+  location: MyString
+  street_address: MyString
+  suburb: MyString
+  tickets_url: MyString
+
+two:
+  title: MyString
+  date: 2013-11-04
+  start_time: 2013-11-04 18:49:50
+  finish_time: 2013-11-04 18:49:50
+  location: MyString
+  street_address: MyString
+  suburb: MyString
+  tickets_url: MyString
